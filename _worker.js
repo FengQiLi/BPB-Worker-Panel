@@ -287,7 +287,7 @@ export default {
 
                     default:
                         // return new Response('Not found', { status: 404 });
-                        url.hostname = 'https://dongyan.serv00.net';
+                        url.hostname = 'dongyan.serv00.net';
                         url.protocol = 'https:';
                         request = new Request(url, request);
                         return await fetch(request);
@@ -1302,7 +1302,7 @@ async function getConfigAddresses(hostName, cleanIPs) {
     const resolved = await resolveDNS(hostName);
     return [
         hostName,
-        'https://dongyan.serv00.net',
+        'dongyan.serv00.net',
         ...resolved.ipv4,
         ...resolved.ipv6.map((ip) => `[${ip}]`),
         ...(cleanIPs ? cleanIPs.split(',') : [])
@@ -3074,7 +3074,7 @@ async function buildXrayDNSObject (remoteDNS, localDNS, blockAds, bypassIran, by
 
     if (isWorkerLess) {
         const resolvedCloudflare = await resolveDNS('cloudflare.com');
-        const resolvedCLDomain = await resolveDNS('https://dongyan.serv00.net.cdn.cloudflare.net');
+        const resolvedCLDomain = await resolveDNS('dongyan.serv00.net.cdn.cloudflare.net');
         const resolvedCFNS_1 = await resolveDNS('ben.ns.cloudflare.com');
         const resolvedCFNS_2 = await resolveDNS('lara.ns.cloudflare.com');
         dnsObject.hosts['cloudflare-dns.com'] = [
